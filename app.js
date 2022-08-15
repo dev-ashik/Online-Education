@@ -1,5 +1,7 @@
 const faBars = document.querySelector(".fa-bars");
 const navbar = document.querySelector(".navbar");
+const header = document.querySelector("header");
+const section = document.querySelector("section");
 
 
 faBars.addEventListener("click", function() {
@@ -14,6 +16,18 @@ faBars.addEventListener("click", function() {
 window.addEventListener('scroll', function() {
     faBars.classList.remove("fa-xmark");
     navbar.classList.remove("nav-toggle");
+
+    if(window.scrollY > 30) {
+        header.classList.add("header-active");
+    }else {
+        header.classList.remove("header-active");
+    }
+
+    // const top = window.scrollTo({
+    //     top: 0,
+    //     left: 0
+    // });
+
 })
 
 // remove class on load
@@ -21,3 +35,4 @@ window.addEventListener('load', function() {
     faBars.classList.remove("fa-xmark");
     navbar.classList.remove("nav-toggle");
 })
+
